@@ -2,26 +2,200 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+section.hero{
+    @apply block md:grid;
+    grid-template-columns: .4fr .6fr ;
+}
+select,
+input[type="email"],
+input[type="tel"],
+input[type="password"], 
+input[type="text"]{
+    @apply block w-full mb-2  rounded-xl ;
+    @apply border p-2 border-gray-300 bg-gray-100 ;
+}
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="text"]:disabled{
+    @apply bg-gray-300 border-0 text-gray-500 cursor-not-allowed;
+}
+label{
+    @apply text-gray-500 text-sm leading-tight;
+    margin-left: 4px;
+}
+label+input {
+    margin-top: -2px;
+}
+button,.button{
+    @apply flex justify-center gap-2 w-full text-gray-700 font-bold;
+    @apply border border-gray-500 px-6 py-2  rounded-xl;
+}
+button[type="submit"],.submit,button.primary {
+    @apply border-primary bg-primary text-white ;
+}
+button[type="submit"]:disabled,.submit:disabled{
+    @apply cursor-not-allowed bg-red-400 ;
+}
+div.tabs > * {
+    @apply bg-gray-300 text-gray-700 rounded-full py-2 px-4 font-semibold;
+}
+div.tabs > *.active{
+    @apply bg-primary text-white;
+}
+.flying-button-parent button{
+    @apply border-primary bg-primary text-white rounded-full;
+}
+/* styles.css */
+
+ .spinner-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+ }
+.spinner {
+  width: 160px;
+  height: 160px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  animation: spin 4s linear infinite;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.pizza-part {
+  width: 80px;
+  height: 80px;
+}
+
+.pizza-part-1 {
+  animation: pizza1 2s ease-in-out infinite;
+}
+
+.pizza-part-2 {
+  animation: pizza2 2s ease-in-out infinite;
+}
+
+.pizza-part-3 {
+  animation: pizza4 2s ease-in-out infinite;
+}
+
+.pizza-part-4 {
+  animation: pizza3 2s ease-in-out infinite;
+}
+
+/* animations */
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes pizza1 {
+  0% {
+    transform: translate(-20%, -20%);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-20%, -20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-20%, -20%);
+    opacity: 0;
+  }
+}
+
+@keyframes pizza2 {
+  0% {
+    transform: translate(20%, -20%) rotateZ(90deg);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(20%, -20%) rotateZ(90deg);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0%, 0%) rotateZ(90deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(0%, 0%) rotateZ(90deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(20%, -20%) rotateZ(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(20%, -20%) rotateZ(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pizza3 {
+  0% {
+    transform: translate(20%, 20%) rotateZ(180deg);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(20%, 20%) rotateZ(180deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(0%, 0%) rotateZ(180deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0%, 0%) rotateZ(180deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(20%, 20%) rotateZ(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(20%, 20%) rotateZ(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pizza4 {
+  0% {
+    transform: translate(-20%, 20%) rotateZ(-90deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(-20%, 20%) rotateZ(-90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(0%, 0%) rotateZ(-90deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0%, 0%) rotateZ(-90deg);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(-20%, 20%) rotateZ(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-20%, 20%) rotateZ(-90deg);
+    opacity: 0;
+  }
 }
