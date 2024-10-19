@@ -9,10 +9,10 @@
   # Directory that includes your static HTML files.
   # This path is relative to the root of your repo.
   # Must point to the directory where your project is built.
-  publish = "build/"
+  publish = "/opt/build/repo/build"
 
   # Your build command.
-  command = "npm run build"
+  command = "yarn run build"
 
 [[redirects]]
   from = "/*"
