@@ -1,0 +1,20 @@
+# netlify.toml
+
+[build]
+  # Directory to change to before starting a build.
+  # This must be a relative path from the root of your repo.
+  # No trailing slash.
+  base = "/"
+
+  # Directory that includes your static HTML files.
+  # This path is relative to the root of your repo.
+  # Must point to the directory where your project is built.
+  publish = "build/"
+
+  # Your build command.
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
