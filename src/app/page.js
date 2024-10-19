@@ -1,7 +1,7 @@
-import Hero from "../components/layout/Hero";
-import HomeMenu from "../components/layout/HomeMenu";
-import SectionHeader from "../components/layout/SectionHeader";
-import React from "react";
+import Header from "@/components/layout/Header";
+import Hero from "@/components/layout/Hero";
+import HomeMenu from "@/components/layout/HomeMenu";
+import SectionHeaders from "@/components/layout/SectionHeaders";
 
 export default function Home() {
   return (
@@ -9,34 +9,29 @@ export default function Home() {
       <Hero />
       <HomeMenu />
       <section className="text-center my-16" id="about">
-        <SectionHeader subHeader={"Our story"} mainHeader={"About us"} />
-        <div className="text-gray-500 max-w-2xl mx-auto flex flex-col gap-4 mt-4 ">
+        <SectionHeaders
+          subHeader={'Our story'}
+          mainHeader={'About us'}
+        />
+        <div className="text-gray-500 max-w-md mx-auto mt-4 flex flex-col gap-4">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            error quisquam dolores expedita ex praesentium. Explicabo, sunt eius
-            quidem optio cupiditate, nobis fuga laudantium, placeat in
-            perspiciatis distinctio. Perferendis, consequatur.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni minima odit recusandae. Illum ipsa non repudiandae? Eum ipsam iste quos suscipit tempora? Aperiam esse fugiat inventore laboriosam officiis quam rem!
           </p>
-          <p>
-            Possimus soluta illo sit dicta illum quam a. Consequatur explicabo
-            illum rerum deserunt, numquam debitis nihil, molestiae quibusdam
-            maiores, nesciunt recusandae dolore?
-          </p>
-          <p>
-            Laborum molestias negue nulla obcaecati odio guia quod reprehenderit
-            sit vitae voluntates? Eos, tenetur.
-          </p>
+          <p>At consectetur delectus ducimus est facere iure molestias obcaecati quaerat vitae voluptate? Aspernatur dolor explicabo iste minus molestiae pariatur provident quibusdam saepe?</p>
+          <p>Laborum molestias neque nulla obcaecati odio quia quod reprehenderit sit vitae voluptates? Eos, tenetur.</p>
         </div>
       </section>
-      <section className="text-center my-16" id="contact">
-        <SectionHeader subHeader={"Don't hesitate"} mainHeader={"Contact us"} />
+      <section className="text-center my-8" id="contact">
+        <SectionHeaders
+          subHeader={'Don\'t hesitate'}
+          mainHeader={'Contact us'}
+        />
         <div className="mt-8">
-          <a href="tel:+919638462249" className="text-4xl underline text-gray-500">
-            +91 963 846 2249
+          <a className="text-4xl underline text-gray-500" href="tel:+46738123123">
+            +46 738 123 123
           </a>
         </div>
       </section>
-      
     </>
-  );
+  )
 }
