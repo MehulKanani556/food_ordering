@@ -10,7 +10,7 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/libs/mongoConnect";
 import { UserInfo } from "@/models/UserInfo";
 
-export const authOptions = {
+const handler = NextAuth({
   secret: process.env.SECRET,
   adapter: MongoDBAdapter(clientPromise),
   providers: [
@@ -39,10 +39,10 @@ export const authOptions = {
       },
     }),
   ],
-}
+});
 
 function isAdmin() {
-  const session = getServerSession(authOptions);
+  const session = getServerSession(handler);
   const userEmail = session?.user?.email;
   if (!userEmail) {
     return false;
@@ -55,7 +55,5 @@ function isAdmin() {
 
   return userInfo.admin;
 }
-
-const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
